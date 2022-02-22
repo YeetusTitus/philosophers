@@ -6,11 +6,27 @@
 /*   By: jforner <jforner@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:56:25 by jforner           #+#    #+#             */
-/*   Updated: 2022/02/17 18:14:40 by jforner          ###   ########.fr       */
+/*   Updated: 2022/02/21 16:00:07 by jforner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philosopher.h"
+
+int	ft_atoi(char *str)
+{
+	int	i;
+	int	nbr;
+
+	i = -1;
+	nbr = 0;
+	while (++i < (int)ft_strlen(str))
+	{
+		nbr *= 10;
+		if (str[i] >= '0' && str[i] <= '9')
+			nbr += (str[i] - '0');
+	}
+	return (nbr);
+}
 
 unsigned long	ft_uatol(char *str)
 {
@@ -80,5 +96,10 @@ int	parse(int argc, char **argv, char *error)
 	if (!verif_isdigit(argc, argv, error)
 		|| !verif_int(argv, argc, error))
 		return (0);
+	if (!ft_atoi(argv[1]))
+	{
+		*error = 'p';
+		return (0);
+	}
 	return (1);
 }

@@ -1,4 +1,4 @@
-SRCS = ft_puterror.c parse.c utils.c 
+SRCS = ft_puterror.c parse.c utils.c createphilo.c core.c
 
 MAIN = main.c
 
@@ -6,7 +6,7 @@ DIRECTORYS = srcs/
 
 SRCSD =	$(addprefix ${DIRECTORYS}, $(SRCS))
 
-EFLAGS = -Wall -Wextra -Werror
+EFLAGS = -Wall -Wextra -Werror -g
 
 OBJS =	${SRCSD:.c=.o}
 
