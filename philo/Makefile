@@ -1,4 +1,4 @@
-SRCS = ft_puterror.c parse.c utils.c createphilo.c core.c
+SRCS = ft_puterror.c parse.c utils.c createphilo.c core.c waiting.c action.c
 
 MAIN = main.c
 

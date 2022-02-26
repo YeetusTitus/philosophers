@@ -6,7 +6,7 @@
 /*   By: jforner <jforner@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 12:18:26 by jforner           #+#    #+#             */
-/*   Updated: 2022/02/22 18:03:38 by jforner          ###   ########.fr       */
+/*   Updated: 2022/02/26 16:13:15 by jforner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,22 @@ typedef struct s_table
 	int				*tabfork;
 	int				*caneat;
 	int				isdead;
+	int				peer;
+	int				t;
+	// pthread_mutex_t	order;
+	pthread_mutex_t	*mutexfork;
 	pthread_mutex_t	mutex;
+	pthread_mutex_t	dying;
 }	t_table;
 
 typedef struct s_philo
 {
-	int		class;
-	int		turn;
-	int		fork;
-	char	**argv;
-	t_table	*table;
+	int				class;
+	int				turn;
+	int				fork;
+	char			**argv;
+	int				tstart;
+	t_table			*table;
 }	t_philo;
 
 //parse
@@ -59,4 +65,16 @@ void			*core(void *philo);
 int				createphilos2(t_philo *philo, char **argv, t_table **table);
 int				createphilos(t_philo *philo, char *error, char **argv);
 
+//waiting
+int				waiting(t_philo *philo, int rightfork, int tstart);
+int				gotoeat(int *caneat, int len);
+void			ordereating(t_philo *philo);
+int				philodying(t_philo *philo);
+int				takeforks(t_philo *p, int rightfork);
+
+//action
+int				gett(int start);
+int				eating(t_philo *philo);
+int				sleepthink(t_philo *philo, int rightfork);
+void			choosefork(t_philo *p, int forkplace);
 #endif
