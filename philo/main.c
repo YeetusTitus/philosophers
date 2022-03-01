@@ -6,7 +6,7 @@
 /*   By: jforner <jforner@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 18:40:19 by jforner           #+#    #+#             */
-/*   Updated: 2022/02/26 17:12:01 by jforner          ###   ########.fr       */
+/*   Updated: 2022/03/01 12:21:00 by jforner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ int	main(int argc, char **argv)
 	while (++i < ft_atoi(argv[1]))
 		pthread_join(th[i], NULL);
 	freedom(th, &philo);
-	// system("leaks philo");
 	return (0);
 }

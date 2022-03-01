@@ -6,7 +6,7 @@
 /*   By: jforner <jforner@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:13:56 by jforner           #+#    #+#             */
-/*   Updated: 2022/02/26 17:13:10 by jforner          ###   ########.fr       */
+/*   Updated: 2022/03/01 11:46:12 by jforner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	*core(void *arg)
 		rightfork = philo->class - 1;
 	gettimeofday(&start, NULL);
 	philo->tstart = start.tv_sec * 1000 + start.tv_usec / 1000;
+	philo->tdeath = start.tv_sec * 1000 + start.tv_usec / 1000;
 	while (philo->turn == -1 || philo->turn-- > 0)
 	{
 		if (!waiting(philo, rightfork, philo->tstart)

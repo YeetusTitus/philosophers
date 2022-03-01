@@ -6,7 +6,7 @@
 /*   By: jforner <jforner@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:44:06 by jforner           #+#    #+#             */
-/*   Updated: 2022/02/26 15:44:20 by jforner          ###   ########.fr       */
+/*   Updated: 2022/02/26 17:24:02 by jforner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	tableset(t_table **table, int len)
 	(*table)->peer = 1;
 	pthread_mutex_init(&(*table)->mutex, NULL);
 	pthread_mutex_init(&(*table)->dying, NULL);
-	// pthread_mutex_init(&(*table)->order, NULL);
 	(*table)->mutexfork = malloc(len * sizeof(pthread_mutex_t));
 	i = -1;
 	while (++i < len)

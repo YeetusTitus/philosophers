@@ -6,7 +6,7 @@
 /*   By: jforner <jforner@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 17:02:10 by jforner           #+#    #+#             */
-/*   Updated: 2022/02/26 17:11:44 by jforner          ###   ########.fr       */
+/*   Updated: 2022/03/01 12:23:41 by jforner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int	freedom(pthread_t *th, t_philo **philo)
 				free(table->tabfork);
 			pthread_mutex_destroy(&table->mutex);
 			pthread_mutex_destroy(&table->dying);
-			// pthread_mutex_destroy(&table->order);
 			i = -1;
 			while (++i < ft_atoi(philo[0]->argv[1]))
 				pthread_mutex_destroy(&table->mutexfork[i]);

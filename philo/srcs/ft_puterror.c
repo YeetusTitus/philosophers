@@ -6,7 +6,7 @@
 /*   By: jforner <jforner@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 17:00:17 by jforner           #+#    #+#             */
-/*   Updated: 2022/02/22 17:58:12 by jforner          ###   ########.fr       */
+/*   Updated: 2022/03/01 12:23:26 by jforner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ int	ft_puterror(char *error)
 		printf("Couldn't allocated memory\n");
 	if (*error == 'p')
 		printf("The number of philosophers is not correct\n");
-	// system("leaks philo");
 	return (0);
 }

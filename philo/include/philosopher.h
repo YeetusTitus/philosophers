@@ -6,7 +6,7 @@
 /*   By: jforner <jforner@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 12:18:26 by jforner           #+#    #+#             */
-/*   Updated: 2022/02/26 16:13:15 by jforner          ###   ########.fr       */
+/*   Updated: 2022/03/01 12:22:55 by jforner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct s_table
 	int				isdead;
 	int				peer;
 	int				t;
-	// pthread_mutex_t	order;
 	pthread_mutex_t	*mutexfork;
 	pthread_mutex_t	mutex;
 	pthread_mutex_t	dying;
@@ -40,6 +39,7 @@ typedef struct s_philo
 	int				fork;
 	char			**argv;
 	int				tstart;
+	int				tdeath;
 	t_table			*table;
 }	t_philo;
 
